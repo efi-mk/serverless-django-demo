@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from users.models import User
+from users.models import Configuration
 
 
 class BaseAdmin(admin.ModelAdmin):
@@ -8,7 +8,7 @@ class BaseAdmin(admin.ModelAdmin):
     date_hierarchy = "updated"
 
 
-@admin.register(User)
+@admin.register(Configuration)
 class UserAdmin(BaseAdmin):
-    list_display = ["user_name", "name"]
-    search_fields = ["user_name"]
+    list_display = ["key", "value"]
+    search_fields = ["key"]

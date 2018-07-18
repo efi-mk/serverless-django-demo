@@ -1,9 +1,9 @@
 from rest_framework import serializers
 
-from users.models import User
+from users.models import Configuration
 
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+class ConfigurationSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = User
-        fields = ('name', 'user_name')
+        model = Configuration
+        fields = ('key', 'value')

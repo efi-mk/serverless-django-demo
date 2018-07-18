@@ -1,9 +1,9 @@
 from rest_framework import viewsets
 
-from users.models import User
-from users.serializers import UserSerializer
+from users.models import Configuration
+from users.serializers import ConfigurationSerializer
 
 
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+class UserViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Configuration.objects.all()
+    serializer_class = ConfigurationSerializer

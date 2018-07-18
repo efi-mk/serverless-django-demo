@@ -13,6 +13,9 @@ class BaseModel(models.Model):
         abstract = True
 
 
-class User(BaseModel):
-    name = models.TextField()
-    user_name = models.TextField()
+class Configuration(BaseModel):
+    key = models.TextField()
+    value = models.TextField()
+
+    def __str__(self):
+        return f"{self.key} = {self.value}"
